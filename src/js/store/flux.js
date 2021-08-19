@@ -1,3 +1,5 @@
+import { CardsPlanetas } from "../component/cardsPlanetas";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -13,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			people: []
+			people: [],
+			planets: []
 		},
 
 		actions: {
@@ -31,6 +34,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(result => {
 						setStore({ people: result.results });
 						console.log(store.people);
+					})
+					.catch(error => console.log("error", error));
+				//loadSomeData planets
+
+				fetch("https://www.swapi.tech/api/planets")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ planets: result.results });
+						console.log(store.planets);
 					})
 					.catch(error => console.log("error", error));
 			},

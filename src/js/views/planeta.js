@@ -2,10 +2,10 @@ import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import { Container, Button, Card, Row, Col, Figure, Table } from "react-bootstrap";
 
-export const Persona = () => (
+export const Planeta = () => (
 	<>
 		<Container fluid>
-			<h1 className="fst-italic text-start fs-4 color-font">Detalle Persona</h1>
+			<h1 className="fst-italic text-start fs-4 color-font">Detalle Planeta</h1>
 			<Row>
 				<Col>
 					<Figure>
@@ -18,10 +18,10 @@ export const Persona = () => (
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>heigth</th>
-						<th>mass</th>
-						<th>hair color</th>
-						<th>homeworld</th>
+						<th>diameter</th>
+						<th>rotation_period</th>
+						<th>orbital_period</th>
+						<th>climate</th>
 					</tr>
 				</thead>
 				<tbody>
