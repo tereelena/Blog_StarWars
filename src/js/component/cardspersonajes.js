@@ -18,8 +18,7 @@ export const CardsPersonajes = () => {
 									<Card.Body>
 										<Card.Title>{persona.name}</Card.Title>
 										<Card.Text>{persona.url}</Card.Text>
-
-										<Button variant="primary">Go Info</Button>
+										<Link to={"/persona/" + persona.uid}> Go Info </Link>
 									</Card.Body>
 								</Card>
 							</Col>

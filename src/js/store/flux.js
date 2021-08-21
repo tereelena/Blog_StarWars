@@ -16,9 +16,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			people: [],
-			planets: []
+			planets: [],
+			detalle_people: [],
+			detalle_planets: []
 		},
-
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
@@ -26,9 +27,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			loadSomeData: () => {
 				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
+                        fetch().then().then(data => setStore({ "foo": data.bar }))
                 */
-				const store = getStore();
+				//loadsomedata people
+			},
+			getPeople: () => {
 				fetch("https://www.swapi.tech/api/people")
 					.then(response => response.json())
 					.then(result => {
@@ -36,8 +39,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log(store.people);
 					})
 					.catch(error => console.log("error", error));
-				//loadSomeData planets
+			},
 
+			getDetallePeople: uid => {
+				fetch("https://www.swapi.tech/api/people/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ detalle_people: result.result.properties });
+						console.log(store.detalle_people);
+					})
+					.catch(error => console.log("error", error));
+			},
+			getPlanets: () => {
 				fetch("https://www.swapi.tech/api/planets")
 					.then(response => response.json())
 					.then(result => {
@@ -46,6 +59,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+
+			getDetallePlanets: uid => {
+				fetch("https://www.swapi.tech/api/planets/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ detalle_planets: result.result.properties });
+						console.log(store.detalle_planets);
+					})
+					.catch(error => console.log("error", error));
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

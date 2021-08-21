@@ -19,7 +19,7 @@ export const CardsPlanetas = () => {
 										Some quick example text to build on the card title and make up the bulk of the
 										cards content.
 									</Card.Text>
-									<Button variant="primary">Go Info</Button>
+									<Link to={"/planeta/" + planetas.uid}> Go Info </Link>
 								</Card.Body>
 							</Card>
 						</Col>

@@ -1,52 +1,47 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
+import PropTypes from "prop-types";
 import { Container, Button, Card, Row, Col, Figure, Table } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
-export const Persona = () => (
-	<>
+export const Persona = props => {
+	const { store, actions } = useContext(Context);
+	const { theid } = useParams();
+	useEffect(() => {
+		actions.getDetallePeople(theid);
+	});
+
+	return (
 		<Container fluid>
-			<h1 className="fst-italic text-start fs-4 color-font">Detalle Persona</h1>
-			<Row>
-				<Col>
-					<Figure>
-						<Figure.Image width={171} height={180} alt="171x180" src="holder.js/171x180" />
-						<Figure.Caption>Nulla vitae elit libero, a pharetra augue mollis interdum.</Figure.Caption>
-					</Figure>
-				</Col>
-			</Row>
+			<h1 className="fst-italic text-start fs-4 color-font">Detalle Personaje</h1>
+
 			<Table striped bordered hover variant="dark">
 				<thead>
 					<tr>
-						<th>#</th>
-						<th>heigth</th>
-						<th>mass</th>
-						<th>hair color</th>
-						<th>homeworld</th>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>Heigth</th>
+						<th>Mass</th>
+						<th>Hair Color</th>
+						<th>Homeworld</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>1</td>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td colSpan="2">Larry the Bird</td>
-						<td>@twitter</td>
-						<td>@twitter</td>
+						<td>{store.detalle_people.name}</td>
+						<td> {store.detalle_people.gender}</td>
+						<td>{store.detalle_people.height}</td>
+						<td>{store.detalle_people.mass}</td>
+						<td>{store.detalle_people.hair_color}</td>
+						<td>{store.detalle_people.homeworld}</td>
 					</tr>
 				</tbody>
 			</Table>
+			<Link to={"/"}> Back Home </Link>
 		</Container>
-	</>
-);
+	);
+};
+Persona.propTypes = {
+	match: PropTypes.object
+};

@@ -11,9 +11,9 @@ export const NavbarStarWars = () => {
 					<img src={starwars} width="75" height="60" className="d-inline-block align-top" alt="" />
 				</Navbar.Brand>
 				<Nav className="me-auto">
-					<Nav.Link href="#home">Personajes</Nav.Link>
-					<Nav.Link href="#home">Planetas</Nav.Link>
-					<Nav.Link href="#home">Naves</Nav.Link>
+					<Nav.Link href="">Personajes</Nav.Link>
+					<Nav.Link href="">Planetas</Nav.Link>
+					<Nav.Link href="">Naves</Nav.Link>
 				</Nav>
 				<Dropdown>
 					<Dropdown.Toggle variant="warning" id="dropdown-split-basic">
