@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { CardsPersonajes } from "../component/cardspersonajes";
 import { CardsPlanetas } from "../component/cardsPlanetas";
 import { CardsNaves } from "../component/cardsNaves";
+import { CardsVehiculos } from "../component/cardsVehiculos";
 import Context from "../store/appContext";
 
 export const Home = () => (
@@ -18,8 +19,8 @@ export const Home = () => (
 			<CardsPlanetas />
 		</div>
 		<div className="container-fluid">
-			<h1 className="fst-italic text-start fs-4 color-font">Naves</h1>
-			<CardsNaves />
+			<h1 className="fst-italic text-start fs-4 color-font">Vehiculos</h1>
+			<CardsVehiculos />
 		</div>
 	</>
 );

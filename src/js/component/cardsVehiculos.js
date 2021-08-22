@@ -3,23 +3,20 @@ import { Link } from "react-router-dom";
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
 import { Context } from "../store/appContext";
 
-export const CardsPlanetas = () => {
+export const CardsVehiculos = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<Container fluid="md">
 			<Row className="scrollhorizontal">
-				{store.planets.map((planetas, posicion) => {
+				{store.vehiculos.map((vehiculos, posicion) => {
 					return (
 						<Col key={posicion}>
 							<Card style={{ width: "18rem" }}>
 								<Card.Img variant="top" src="holder.js/100px180" />
 								<Card.Body>
-									<Card.Title>{planetas.name}</Card.Title>
-									<Card.Text>
-										Some quick example text to build on the card title and make up the bulk of the
-										cards content.
-									</Card.Text>
-									<Link to={"/planeta/" + planetas.uid}>
+									<Card.Title>{vehiculos.name}</Card.Title>
+									<Card.Text>{vehiculos.url}</Card.Text>
+									<Link to={"/vehiculo/" + vehiculos.uid}>
 										<Button variant="outline-dark">Go Info</Button>
 									</Link>
 								</Card.Body>
