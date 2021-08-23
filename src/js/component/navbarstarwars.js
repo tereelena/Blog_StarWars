@@ -10,11 +10,7 @@ export const NavbarStarWars = () => {
 				<Navbar.Brand href="#home">
 					<img src={starwars} width="75" height="60" className="d-inline-block align-top" alt="" />
 				</Navbar.Brand>
-				<Nav className="me-auto">
-					<Nav.Link href="">Personajes</Nav.Link>
-					<Nav.Link href="">Planetas</Nav.Link>
-					<Nav.Link href="">Vehiculos</Nav.Link>
-				</Nav>
+
 				<Dropdown>
 					<Dropdown.Toggle variant="warning" id="dropdown-split-basic">
 						Favoritos

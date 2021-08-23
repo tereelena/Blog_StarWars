@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 
 export const CardsPlanetas = () => {
 	const { store, actions } = useContext(Context);
+
 	return (
 		<Container fluid="md">
 			<Row className="scrollhorizontal">
