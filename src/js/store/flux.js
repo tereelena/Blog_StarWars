@@ -20,7 +20,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehiculos: [],
 			detalle_people: [],
 			detalle_planets: [],
-			detalle_vehiculos: []
+			detalle_vehiculos: [],
+			lista_favoritos: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -33,6 +34,19 @@ const getState = ({ getStore, getActions, setStore }) => {
                 */
 				//loadsomedata people
 			},
+			addFav: nombre => {
+				const store = getStore();
+				setStore({
+					lista_favoritos: [...store.lista_favoritos, nombre]
+				});
+			},
+			removefav: posicion => {
+				const store = getStore();
+				console.log(posicion);
+				const newListfav = store.lista_favoritos.filter(key => key !== posicion);
+				setStore({ lista_favoritos: newListfav });
+			},
+
 			getPeople: () => {
 				fetch("https://www.swapi.tech/api/people")
 					.then(response => response.json())

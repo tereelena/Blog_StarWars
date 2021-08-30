@@ -2,13 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
 import { Context } from "../store/appContext";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaListAlt } from "react-icons/fa";
 
 export const CardsPersonajes = () => {
 	const { store, actions } = useContext(Context);
 	//const favpersonajes = [];
 	//const [inputfavoritos, setfavoritos] = useState("");
-	const [listafavoritos, setlistafavoritos] = useState([]); // listafavoritoos, arreglo debe inicializarse en un arreglo vacio
+	//const [listafavoritos, setlistafavoritos] = useState([]); // listafavoritoos, arreglo debe inicializarse en un arreglo vacio
 	//const img = [{ name: "img1" }, { name: "img2" }, { name: "img3" }];
 	return (
 		<Container fluid="md">
@@ -24,13 +24,12 @@ export const CardsPersonajes = () => {
 									<Link to={"/persona/" + persona.uid}>
 										<Button variant="outline-dark">Go Info</Button>
 									</Link>
-									<Link className="justify-content-end" to="">
+									<Link className="mx-3" to="">
 										<Button
 											variant="outline-warning"
 											onClick={() => {
-												setlistafavoritos([...listafavoritos, persona.name]);
-												console.log(listafavoritos);
-												console.log(listafavoritos.length);
+												actions.addFav(persona.name);
+												console.log(store.lista_favoritos);
 											}}>
 											<FaRegHeart />
 										</Button>
