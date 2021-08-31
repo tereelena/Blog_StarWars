@@ -17,7 +17,9 @@ export const CardsPersonajes = () => {
 					return (
 						<Col key={posicion}>
 							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src="holder.js/100px180" />
+								{
+									//<Card.Img variant="top" src="holder.js/100px180" />
+								}
 								<Card.Body>
 									<Card.Title>{persona.name}</Card.Title>
 									<Card.Text>{persona.url}</Card.Text>

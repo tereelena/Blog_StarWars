@@ -17,27 +17,23 @@ export const NavbarStarWars = () => {
 				</Navbar.Brand>
 
 				<Dropdown>
-					<Dropdown.Toggle variant="warning" id="dropdown-split-basic">
+					<Dropdown.Toggle variant="warning" id="dropdown-item-button">
 						Favoritos
 					</Dropdown.Toggle>
-					<Dropdown.Menu>
+					<Dropdown.Menu style={{ width: "250px" }}>
 						{store.lista_favoritos.map((favorito, posicion) => {
-							if (lista_favoritos !== "") {
-								return (
-									<Dropdown.Item key={posicion}>
-										{favorito}
+							return (
+								<Dropdown.Item key={posicion}>
+									{favorito}
 
-										<i
-											className="fas fa-trash-alt"
-											onClick={posicion => {
-												actions.removefav(lista_favoritos);
-											}}
-										/>
-									</Dropdown.Item>
-								);
-							} else {
-								return <h5> your list is empty</h5>;
-							}
+									<i
+										className="fas fa-trash-alt float-right"
+										onClick={posicion => {
+											actions.removefav(favorito);
+										}}
+									/>
+								</Dropdown.Item>
+							);
 						})}
 					</Dropdown.Menu>
 				</Dropdown>
