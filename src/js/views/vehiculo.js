@@ -38,7 +38,9 @@ export const Vehiculo = props => {
 					</tr>
 				</tbody>
 			</Table>
-			<Link to={"/"}> Back Home </Link>
+			<Link to={"/"}>
+				<Button variant="outline-dark">Back Home</Button>
+			</Link>
 		</Container>
 	);
 };
