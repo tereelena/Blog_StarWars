@@ -12,7 +12,7 @@ export const CardsVehiculos = () => {
 				{store.vehiculos.map((vehiculos, posicion) => {
 					return (
 						<Col key={posicion}>
-							<Card style={{ width: "18rem" }}>
+							<Card border="dark" style={{ width: "18rem" }}>
 								{
 									//<Card.Img variant="top" src="holder.js/100px180" />
 								}

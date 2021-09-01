@@ -13,7 +13,7 @@ export const CardsPlanetas = () => {
 				{store.planets.map((planetas, posicion) => {
 					return (
 						<Col key={posicion}>
-							<Card style={{ width: "18rem" }}>
+							<Card border="dark" style={{ width: "18rem" }}>
 								{
 									//<Card.Img variant="top" src="holder.js/100px180" />
 								}
