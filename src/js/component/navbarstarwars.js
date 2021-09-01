@@ -11,7 +11,7 @@ export const NavbarStarWars = () => {
 
 	return (
 		<Navbar bg="dark" variant="dark" expand="lg">
-			<Container fluid>
+			<Container>
 				<Navbar.Brand href="#home">
 					<img src={starwars} width="75" height="60" className="d-inline-block align-top" alt="" />
 				</Navbar.Brand>
